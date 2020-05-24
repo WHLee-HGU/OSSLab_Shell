@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Script to retrieve a file via FTP
+
+FTP_SERVER=ftp.nl.debian.org
+FTP_PATH=/debian/dists
+
+ftp -n << _EOF_
+open $FTP_PATH
+user anonymous me@linuxbox
+cd $FTP_PATH
+bye
+_EOF_
